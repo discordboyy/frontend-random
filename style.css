@@ -1,0 +1,143 @@
+* {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #000000;
+    text-rendering: optimizelegibility;
+    font-family: "Inter", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    max-width: 1023.75px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;     /* Center horizontally */
+    text-align: center;      /* Center text inside header */
+}
+
+.logo {
+    width: 595.68px;
+    height: auto;
+}
+
+h3 {
+    font-size: 36px;
+    margin-top: 20px; /* Add spacing below the image */
+}
+
+
+main {
+    max-width: 1023.75px;
+    margin: 40px auto;
+    position: relative; /* Establishes a containing block for absolutely positioned elements */
+    text-align: center;
+}
+
+#value {
+    font-size: 144.9px;
+}
+
+.svg-rectangle {
+    width: 762px;
+    height: auto;
+    position: relative; /* Ensures the image is below the text in stacking order */
+    z-index: 1; /* Places the image below the text */
+}
+
+.value-wrapper {
+    font-size: 144.9px;
+    position: absolute; /* Positions the text above the image */
+    top: 5%; /* Place the text at the top */
+    left: 27%; /* Centers horizontally */
+    transform: translateX(-50%); /* Ensures perfect centering */
+    z-index: 10; /* Makes sure the text appears above the image */
+    margin-bottom: 0; /* No margin, since it's positioned absolutely */
+}
+
+.value {
+  font-size: 144.9px;
+  color: red;
+}
+
+.currency {
+  font-size: 20px;
+  margin-left: -30px;
+  color: black;
+  align-self: flex-end;
+}
+
+p {
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 24.65px;
+}
+
+.server {
+    width: 100%;
+    height: auto;
+}
+
+.soc-link {
+    margin: auto;
+    font-size: 27.04px;
+    color: #000000;
+    position: relative; /* To position the arrow inside */
+    text-decoration: none; /* Remove underline */
+    align-items: center; /* Align text and arrow horizontally */
+    gap: 8px; /* Adjust space between the text and arrow */
+}
+
+.soc-link .arrow {
+    opacity: 0; /* Hide the arrow initially */
+    transform: translateX(-5px); /* Shift arrow slightly left */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.soc-link:hover .arrow {
+    opacity: 1; /* Make the arrow visible on hover */
+    transform: translateX(0); /* Bring the arrow into its normal position */
+}
+
+.soc-link img {
+    width: 16px; /* Set size for the arrow */
+    height: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 80%;
+    }
+
+    p {
+        font-size: 36px;
+    }
+
+    .value-wrapper {
+        position: absolute; /* Positions the text above the image */
+        left: 14%; /* Centers horizontally */
+    }
+
+    #value {
+        font-size: 144.9px;
+        top: 5%; /* Place the text at the top */
+        left: 1%; /* Centers horizontally */
+    }
+
+    .soc-link {
+        font-size: 50px;
+    }
+
+    .soc-link img {
+    width: 35px; /* Set size for the arrow */
+    height: 35px;
+}
+}

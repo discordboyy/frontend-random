@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Current value project</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="style.css">
+  <!--Inter:-->
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="icon" type="image/png" href="link/icon.png" sizes="32x32">
+</head>
+<body>
+  <header>
+    <img class="logo" src="link/Frame 5.png" alt="">
+    <h3>(*the crypto is nonexistent.)</h3>
+  </header>
+  <main>
+    <div class="value-wrapper animate__animated animate__bounce">
+      <span id="value" class="value">Загрузка...</span>
+      <span class="currency">usdt</span>
+    </div>
+    <img class="svg-rectangle" src="link/Rectangle 1.svg" alt="">
+    <div id="change">Изменение: ...</div>
+
+    <script>
+      const API_URL = 'https://random-backend-38bp.onrender.com/api/latest';
+
+    async function fetchValue() {
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      const valueElement = document.getElementById('value');
+      const changeElement = document.getElementById('change');
+
+      // Обновляем текст
+      valueElement.textContent = data?.value?.toFixed(4) ?? 'Нет данных';
+      changeElement.textContent = data?.change?.toFixed(4) ?? 'Нет данных';
+
+      // Цвет по направлению изменения
+      if (data?.change > 0) {
+        valueElement.style.color = '#7cb518';
+        changeElement.style.color = '#7cb518';
+      } else if (data?.change < 0) {
+        valueElement.style.color = '#e5383b';
+        changeElement.style.color = '#e5383b';
+      } else {
+        valueElement.style.color = 'black';
+        changeElement.style.color = 'black';
+      }
+
+    } catch (e) {
+      document.getElementById('value').textContent = 'Ошибка';
+      document.getElementById('change').textContent = '';
+    }
+  }
+
+  fetchValue();
+  setInterval(fetchValue, 1000);
+    </script>
+    <p>a self-initiative project by designer Mertygraal, also known as Makar Hrydkovets, about how quickly the price of crypto currency changes. The project itself lists its virtual non-existent crypto currency as starting at a price of 10 dollars</p>
+    <p>It is important that the price you see in front of you does not exist, but only imitates it.</p>
+    <p>The goal of the project is to visualize how quickly and unpredictably the price of a cryptocurrency can rise or fall to incredible levels.</p>
+    <p>The price started at $10, the project itself includes two servers that work on calculating and visualizing the price. The first server is responsible for generating the price and its increase or decrease. And the second server is created to display the price on the site so that everyone can go in and see the price now.</p>
+    <img class="server" src="link/Group 3.png" alt="">
+    <p>The project uses only files with the following extensions: js. ​​json. css. html.</p>
+    <p>If you have any questions or suggestions regarding the project or collaboration with the designer, you can contact him on Instagram via DM.</p>
+    <a class="soc-link" href="https://www.instagram.com/mertygraal/">Instagram <span class="arrow"><img src="link/arrow.svg"></span></a>
+    <p style="text-align: center;">thanks to everyone who has made it this far</p>
+  </main>
+</body>
+</html>
