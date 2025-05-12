@@ -24,7 +24,7 @@ header {
 }
 
 .logo {
-    width: 595.68px;
+    width: 80%;
     height: auto;
 }
 
@@ -46,7 +46,7 @@ main {
 }
 
 .svg-rectangle {
-    width: 762px;
+    width: 100%;
     height: auto;
     position: relative; /* Ensures the image is below the text in stacking order */
     z-index: 1; /* Places the image below the text */
@@ -122,12 +122,15 @@ p {
     }
 
     .value-wrapper {
+        margin-top: -170px;
         position: absolute; /* Positions the text above the image */
         left: 14%; /* Centers horizontally */
     }
 
+.value-wrapper.animate__animated.animate__bounce {}
+
     #value {
-        font-size: 144.9px;
+        font-size: 3.5rem;
         top: 5%; /* Place the text at the top */
         left: 1%; /* Centers horizontally */
     }
@@ -140,4 +143,58 @@ p {
     width: 35px; /* Set size for the arrow */
     height: 35px;
 }
+}
+
+@media screen and (max-width: 550px) {
+    .value-wrapper {
+        margin-top: -190px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .value-wrapper {
+        margin-top: -210px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .value-wrapper {
+        margin-top: -230px;
+        left: 16%; /* Centers horizontally */
+    }
+
+    
+    #value {
+        font-size: 2.5rem;
+        top: 5%; /* Place the text at the top */
+        left: 1%; /* Centers horizontally */
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .value-wrapper {
+        margin-top: -250px;
+        left: 16%; /* Centers horizontally */
+    }
+
+    
+    #value {
+        font-size: 2.5rem;
+        top: 5%; /* Place the text at the top */
+        left: 1%; /* Centers horizontally */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .value-wrapper {
+        margin-top: -280px;
+        left: 16%; /* Centers horizontally */
+    }
+
+    
+    #value {
+        font-size: 2rem;
+        top: 5%; /* Place the text at the top */
+        left: 1%; /* Centers horizontally */
+    }
 }
