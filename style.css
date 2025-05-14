@@ -14,7 +14,7 @@ html {
 }
 
 header {
-    max-width: 1023.75px;
+    width: 1023.75px;
     margin: auto;
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -35,7 +35,7 @@ h3 {
 
 
 main {
-    max-width: 1023.75px;
+    width: 1023.75px;
     margin: 40px auto;
     position: relative; /* Establishes a containing block for absolutely positioned elements */
     text-align: center;
